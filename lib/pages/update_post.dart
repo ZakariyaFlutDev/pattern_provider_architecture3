@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pattern_provider_architecture3/model/post_model.dart';
-import 'package:pattern_provider_architecture3/pages/home_page.dart';
-import 'package:pattern_provider_architecture3/service/http_service.dart';
 import 'package:pattern_provider_architecture3/view_model/update_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +32,7 @@ class _UpdatePostState extends State<UpdatePost> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Create Post",
+            "Update Post",
             style: TextStyle(color: Colors.white, fontSize: 28),
           ),
         ),
