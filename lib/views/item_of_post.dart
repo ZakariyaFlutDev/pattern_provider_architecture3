@@ -9,7 +9,7 @@ Widget itemOfPost(HomeViewModel viewModel, Post post) {
     startActionPane: ActionPane(motion: BehindMotion(), children: [
       SlidableAction(
         onPressed: (context) {
-          viewModel.apiPostUpdate(post,context);
+          viewModel.apiPostUpdate(post, context);
         },
         backgroundColor: Color(0xFF0392CF),
         foregroundColor: Colors.white,
@@ -22,7 +22,9 @@ Widget itemOfPost(HomeViewModel viewModel, Post post) {
       children: [
         SlidableAction(
           onPressed: (context) {
-            viewModel.apiPostDelete(post);
+            viewModel.apiPostDelete(post).then((value) => {
+                  if (value) viewModel.apiPostList(),
+                });
           },
           backgroundColor: Color(0xFFFE4A49),
           foregroundColor: Colors.white,
@@ -38,8 +40,7 @@ Widget itemOfPost(HomeViewModel viewModel, Post post) {
         children: [
           Text(
             post.title!.toUpperCase(),
-            style:
-            TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 5,
